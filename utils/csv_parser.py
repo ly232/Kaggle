@@ -32,6 +32,12 @@ def IsCategorical(value):
   return type(value) is str
 
 
+"""CSV parser to parse CSV data into numpy arrays for subsequent ML pipeline.
+It provides the following features:
+  - Extracts out categorical data and apply with one-hot-encoding.
+  - Shuffle columns to cluster with non-categorical/categorical columns.
+  - Extract headers.
+"""
 class CsvParser(object):
 
   """Initialized the inferencer with header row and data row.
@@ -75,7 +81,7 @@ class CsvParser(object):
 
     # Data splitted by non-categorical vs. categorical.
     non_categorical_data, categorical_data, categories_count = (
-      self._SplitCategorialColumns())
+      self._SplitCategorialColumns(self._raw_train_data))
 
     # Shuffled header corresponds to the splitted data and one hot encoding.
     self._shuffled_header = []
@@ -105,8 +111,16 @@ class CsvParser(object):
     # one-hot-encoding.
     encoded_categorical_data = self._one_hot_encoder.transform(
       categorical_data).toarray()
+
+    non_categorical_test_data, categorical_test_data, _ = (
+      self._SplitCategorialColumns(self._raw_test_data))
+    encoded_categorical_test_data = self._one_hot_encoder.transform(
+      categorical_test_data).toarray()
+
     self._data = {
       'X': np.hstack((non_categorical_data, encoded_categorical_data)),
+      'X_test': np.hstack(
+        (non_categorical_test_data, encoded_categorical_test_data)),
       'y': np.array(self._raw_target_data),
       'X_schema': self._shuffled_header,
       'y_schema': target_colname,
@@ -124,14 +138,14 @@ class CsvParser(object):
   Returns to sets of data that are column-splitted, such that one set consists
   of non-categorical data, the other contains categorical data.
   """
-  def _SplitCategorialColumns(self):
-    if not self._raw_train_data:
+  def _SplitCategorialColumns(self, data):
+    if not data:
       return []
 
     # Cluster categorical columns together.
     data = [
       sorted(row, key=IsCategorical)
-      for row in self._raw_train_data
+      for row in data
     ]
     categorical_column_start_index = None
     for i in range(len(data[0])):

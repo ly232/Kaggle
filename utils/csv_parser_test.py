@@ -2,7 +2,7 @@ import datetime
 import numpy as np
 import unittest
 
-from schema_inferencer import CsvParser
+from csv_parser import CsvParser
 
 class TestSchemaInferencer(unittest.TestCase):
   def setUp(self):
@@ -16,7 +16,7 @@ class TestSchemaInferencer(unittest.TestCase):
 
     self.assertEqual(
       [
-       [1.0, 'x', '', datetime.datetime(2000, 1, 1, 0, 0), '1234-56-78', 2.3],
+       [1.0, 'y', '', datetime.datetime(2000, 1, 1, 0, 0), '1234-56-79', 2.3],
        [2.0, 'y', 1.0, datetime.datetime(2001, 2, 2, 0, 0), '1234-56-79', 2.3],
        [2.0, 'z', 0.0, datetime.datetime(2001, 2, 2, 0, 0), '1234-56-79', 2.3]
       ],
@@ -31,7 +31,7 @@ class TestSchemaInferencer(unittest.TestCase):
 
     self.assertEqual(
       [
-       [1.0, 'x', datetime.datetime(2000, 1, 1, 0, 0), '1234-56-78', 2.3],
+       [1.0, 'y', datetime.datetime(2000, 1, 1, 0, 0), '1234-56-79', 2.3],
       ],
       self._csv_parser._raw_test_data)
 
@@ -52,6 +52,11 @@ class TestSchemaInferencer(unittest.TestCase):
         [2.0, datetime.datetime(2001, 2, 2, 0, 0), 2.3, 1.0, 0.0, 1.0],
         [2.0, datetime.datetime(2001, 2, 2, 0, 0), 2.3, 0.0, 1.0, 1.0]]),
       data['X'])
+
+    np.testing.assert_array_equal(
+      np.array([
+        [1.0, datetime.datetime(2000, 1, 1, 0, 0), 2.3, 1.0, 0.0, 1.0]]),
+      data['X_test'])
 
     np.testing.assert_array_equal(
       np.array([[ 1.], [ 0.]]),
