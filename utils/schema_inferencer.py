@@ -1,5 +1,6 @@
 """Utilities for schema inference related functionalities."""
 import csv
+import numpy as np
 
 from datetime import datetime
 from sklearn import preprocessing
@@ -40,11 +41,18 @@ class CsvSchemaInferencer(object):
 
   Args:
      filename (str): CSV filename.
+     target_colname (str): Column name for the target variable.
   """
-  def __init__(self, filename):
+  def __init__(self, filename, target_colname=None):
     # Header and data extracted from CSV file.
     self._raw_header = None
     self._raw_data = []
+
+    self._raw_train_data = []
+    self._raw_test_data = []
+    self._raw_target_data = []
+    self._raw_no_target_header = []
+
     with open(filename, 'r') as f:
       csv_reader = csv.reader(f)
       for row in csv_reader:
@@ -53,28 +61,62 @@ class CsvSchemaInferencer(object):
         else:
           self._raw_data.append(map(MaybeGetFloat, map(MaybeGetDate, row)))
 
+    if target_colname is not None:
+      target_colindex = self._raw_header.index(target_colname)
+      self._raw_no_target_header = (
+        self._raw_header[:target_colindex] + 
+        self._raw_header[target_colindex + 1 :]
+      )
+      for row in self._raw_data:
+        x = [row[i] for i in range(len(row)) if i != target_colindex]
+        y = row[target_colindex]
+        if row[target_colindex] == '':
+          self._raw_test_data.append(x)
+        else:
+          self._raw_train_data.append(x)
+          self._raw_target_data.append([y])
+
     # Data splitted by non-categorical vs. categorical.
-    self._non_categorical_data, self._categorical_data = (
+    non_categorical_data, categorical_data, categories_count = (
       self._SplitCategorialColumns())
 
-    # Shuffled header corresponds to the splitted data.
+    # Shuffled header corresponds to the splitted data and one hot encoding.
     self._shuffled_header = []
-    if self._raw_data:
+    if self._raw_train_data:
       non_categorical_indexes = [
-        i for i in range(len(self._raw_data[0])) 
-          if not IsCategorical(self._raw_data[0][i])]
+        i for i in range(len(self._raw_train_data[0])) 
+          if not IsCategorical(self._raw_train_data[0][i])]
       categorical_indexes = [
-        i for i in range(len(self._raw_data[0])) 
-          if IsCategorical(self._raw_data[0][i])]
-      for i in non_categorical_indexes + categorical_indexes:
-        self._shuffled_header.append(self._raw_header[i])
+        i for i in range(len(self._raw_train_data[0])) 
+          if IsCategorical(self._raw_train_data[0][i])]
+      for i in non_categorical_indexes:
+        self._shuffled_header.append(self._raw_no_target_header[i])
+      offset = 0
+      assert len(categorical_indexes) == len(categories_count)
+      for i in categorical_indexes:
+        self._shuffled_header.extend(
+          [self._raw_no_target_header[i] + '_' + str(j) 
+           for j in range(categories_count.values()[offset])]
+        )
+        offset += 1
 
     # Apply one-hot-encoding to categorical data.
     self._one_hot_encoder = preprocessing.OneHotEncoder()
-    self._one_hot_encoder.fit(self._categorical_data)
+    self._one_hot_encoder.fit(categorical_data)
 
-  def OneHotEncode(self, categorical_data):
-    return self._one_hot_encoder.transform(categorical_data).toarray()
+    # Augment non-categorical and categorical data. For categorical data, apply
+    # one-hot-encoding.
+    encoded_categorical_data = self._one_hot_encoder.transform(
+      categorical_data).toarray()
+    self._data = {
+      'X': np.hstack((non_categorical_data, encoded_categorical_data)),
+      'y': np.array(self._raw_target_data),
+      'X_schema': self._shuffled_header,
+      'y_schema': target_colname,
+    }
+
+  def GetData(self):
+    return self._data
 
   """Split by non-categorical and categorical columns.
 
@@ -86,13 +128,13 @@ class CsvSchemaInferencer(object):
   of non-categorical data, the other contains categorical data.
   """
   def _SplitCategorialColumns(self):
-    if not self._raw_data:
+    if not self._raw_train_data:
       return []
 
     # Cluster categorical columns together.
     data = [
       sorted(row, key=IsCategorical)
-      for row in self._raw_data
+      for row in self._raw_train_data
     ]
     categorical_column_start_index = None
     for i in range(len(data[0])):
@@ -129,4 +171,10 @@ class CsvSchemaInferencer(object):
           new_row.append(categories.index(row[i]))
       category_data.append(new_row)
 
-    return non_category_data, category_data
+    # Keep track of number of elements per category.
+    categories_count = {
+      i: len(catetories_by_column_index[i])
+      for i in catetories_by_column_index
+    }
+
+    return non_category_data, category_data, categories_count
