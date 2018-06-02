@@ -1,4 +1,3 @@
-"""Utilities for schema inference related functionalities."""
 import csv
 import numpy as np
 
@@ -32,10 +31,8 @@ def MaybeGetDate(value):
 def IsCategorical(value):
   return type(value) is str
 
-# CSV Schema inferencer to get schema from a CSV file. It notably uses one-hot
-# encoding to expand enum-like columns, and attach type annotations to columns
-# in the widened version.
-class CsvSchemaInferencer(object):
+
+class CsvParser(object):
 
   """Initialized the inferencer with header row and data row.
 
