@@ -92,8 +92,11 @@ class Classifiers(object):
     for thread in threads:
       thread.join()
 
+  def Predict(self, model, X):
+    return self._models[model].predict(X)
+
   def GetReport(self):
-    report = ''
+    report = '== Classifiers Comparison Report ==\n\n'
     for model in self._scores:
       score = self._scores[model]
       report += model + '\n'
