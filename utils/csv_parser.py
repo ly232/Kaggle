@@ -1,5 +1,14 @@
+"""CSV parser to parse CSV data into numpy arrays for subsequent ML pipeline.
+
+It provides the following features:
+  - Extracts out categorical data and apply with one-hot-encoding.
+  - Shuffle columns to cluster with non-categorical/categorical columns.
+  - Extract headers.
+"""
+
 import csv
 import numpy as np
+import time
 
 from datetime import datetime
 from sklearn import preprocessing
@@ -23,7 +32,7 @@ def MaybeGetFloat(value):
 def MaybeGetDate(value):
   for pattern in _DATETIME_PATTERNS:
     try:
-      return datetime.strptime(value, pattern)
+      return time.mktime(datetime.strptime(value, pattern).timetuple())
     except Exception:
       continue
   return value
@@ -32,12 +41,6 @@ def IsCategorical(value):
   return type(value) is str
 
 
-"""CSV parser to parse CSV data into numpy arrays for subsequent ML pipeline.
-It provides the following features:
-  - Extracts out categorical data and apply with one-hot-encoding.
-  - Shuffle columns to cluster with non-categorical/categorical columns.
-  - Extract headers.
-"""
 class CsvParser(object):
 
   """Initialized the inferencer with header row and data row.
@@ -77,7 +80,7 @@ class CsvParser(object):
           self._raw_test_data.append(x)
         else:
           self._raw_train_data.append(x)
-          self._raw_target_data.append([y])
+          self._raw_target_data.append(y)
 
     # Data splitted by non-categorical vs. categorical.
     non_categorical_data, categorical_data, categories_count = (

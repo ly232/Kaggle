@@ -1,0 +1,101 @@
+action_type,combined_shot_type,game_event_id,game_id,lat,loc_x,loc_y,lon,minutes_remaining,period,playoffs,season,seconds_remaining,shot_distance,shot_made_flag,shot_type,shot_zone_area,shot_zone_basic,shot_zone_range,team_id,team_name,game_date,matchup,opponent,shot_id
+Jump Shot,Jump Shot,10,20000012,33.9723,167,72,-118.1028,10,1,0,2000-01,27,18,,2PT Field Goal,Right Side(R),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,1
+Jump Shot,Jump Shot,12,20000012,34.0443,-157,0,-118.4268,10,1,0,2000-01,22,15,0,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,2
+Jump Shot,Jump Shot,35,20000012,33.9093,-101,135,-118.3708,7,1,0,2000-01,45,16,1,2PT Field Goal,Left Side Center(LC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,3
+Jump Shot,Jump Shot,43,20000012,33.8693,138,175,-118.1318,6,1,0,2000-01,52,22,0,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,4
+Driving Dunk Shot,Dunk,155,20000012,34.0443,0,0,-118.2698,6,2,0,2000-01,19,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,5
+Jump Shot,Jump Shot,244,20000012,34.0553,-145,-11,-118.4148,9,3,0,2000-01,32,14,0,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,6
+Layup Shot,Layup,251,20000012,34.0443,0,0,-118.2698,8,3,0,2000-01,52,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,7
+Jump Shot,Jump Shot,254,20000012,34.0163,1,28,-118.2688,8,3,0,2000-01,5,2,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,8
+Jump Shot,Jump Shot,265,20000012,33.9363,-65,108,-118.3348,6,3,0,2000-01,12,12,1,2PT Field Goal,Left Side(L),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,9
+Running Jump Shot,Jump Shot,294,20000012,33.9193,-33,125,-118.3028,3,3,0,2000-01,36,12,0,2PT Field Goal,Center(C),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,10
+Jump Shot,Jump Shot,309,20000012,33.8063,-94,238,-118.3638,1,3,0,2000-01,56,25,0,3PT Field Goal,Left Side Center(LC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-10-31,LAL @ POR,POR,11
+Jump Shot,Jump Shot,4,20000019,33.9173,121,127,-118.1488,11,1,0,2000-01,0,17,1,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,12
+Running Jump Shot,Jump Shot,27,20000019,33.9343,-67,110,-118.3368,7,1,0,2000-01,9,12,1,2PT Field Goal,Left Side(L),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,13
+Jump Shot,Jump Shot,66,20000019,34.0403,-94,4,-118.3638,2,1,0,2000-01,44,9,0,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,14
+Jump Shot,Jump Shot,80,20000019,33.9973,-23,47,-118.2928,1,1,0,2000-01,16,5,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,15
+Jump Shot,Jump Shot,86,20000019,33.8523,62,192,-118.2078,0,1,0,2000-01,48,20,0,2PT Field Goal,Center(C),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,16
+Driving Layup Shot,Layup,100,20000019,34.0443,0,0,-118.2698,0,1,0,2000-01,1,0,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,17
+Jump Shot,Jump Shot,138,20000019,33.8183,-117,226,-118.3868,8,2,0,2000-01,50,25,1,3PT Field Goal,Left Side Center(LC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,18
+Jump Shot,Jump Shot,244,20000019,33.9473,-132,97,-118.4018,11,3,0,2000-01,29,16,0,2PT Field Goal,Left Side Center(LC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,19
+Driving Layup Shot,Layup,249,20000019,34.0443,0,0,-118.2698,10,3,0,2000-01,46,0,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,20
+Jump Shot,Jump Shot,255,20000019,33.9003,3,144,-118.2668,10,3,0,2000-01,8,14,0,2PT Field Goal,Center(C),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,21
+Jump Shot,Jump Shot,265,20000019,33.9173,134,127,-118.1358,9,3,0,2000-01,4,18,0,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,22
+Running Jump Shot,Jump Shot,274,20000019,33.9343,-16,110,-118.2858,7,3,0,2000-01,57,11,1,2PT Field Goal,Center(C),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,23
+Running Jump Shot,Jump Shot,299,20000019,33.8943,-109,150,-118.3788,5,3,0,2000-01,47,18,1,2PT Field Goal,Left Side Center(LC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,24
+Running Jump Shot,Jump Shot,307,20000019,33.9813,-46,63,-118.3158,5,3,0,2000-01,11,7,1,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,25
+Layup Shot,Layup,332,20000019,34.0443,0,0,-118.2698,2,3,0,2000-01,36,0,0,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,26
+Jump Shot,Jump Shot,345,20000019,33.8483,-58,196,-118.3278,2,3,0,2000-01,4,20,0,2PT Field Goal,Center(C),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,27
+Jump Shot,Jump Shot,369,20000019,33.8583,-183,186,-118.4528,0,3,0,2000-01,30,26,0,3PT Field Goal,Left Side Center(LC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,28
+Jump Shot,Jump Shot,400,20000019,33.8713,85,173,-118.1848,8,4,0,2000-01,19,19,0,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,29
+Jump Shot,Jump Shot,429,20000019,33.9573,3,87,-118.2668,6,4,0,2000-01,22,8,0,2PT Field Goal,Center(C),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,30
+Running Jump Shot,Jump Shot,488,20000019,34.0403,121,4,-118.1488,1,4,0,2000-01,20,12,1,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,31
+Jump Shot,Jump Shot,499,20000019,34.0103,127,34,-118.1428,0,4,0,2000-01,30,13,0,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-01,LAL vs. UTA,UTA,32
+Jump Shot,Jump Shot,4,20000047,33.9683,163,76,-118.1068,11,1,0,2000-01,26,17,,2PT Field Goal,Right Side(R),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,33
+Jump Shot,Jump Shot,8,20000047,33.8503,70,194,-118.1998,10,1,0,2000-01,58,20,,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,34
+Layup Shot,Layup,26,20000047,34.0253,1,19,-118.2688,7,1,0,2000-01,33,1,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,35
+Layup Shot,Layup,37,20000047,34.0293,-12,15,-118.2818,5,1,0,2000-01,58,1,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,36
+Reverse Layup Shot,Layup,53,20000047,34.0403,1,4,-118.2688,4,1,0,2000-01,9,0,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,37
+Jump Shot,Jump Shot,165,20000047,33.9283,-117,116,-118.3868,5,2,0,2000-01,33,16,,2PT Field Goal,Left Side Center(LC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,38
+Jump Shot,Jump Shot,184,20000047,33.8603,91,184,-118.1788,3,2,0,2000-01,30,20,1,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,39
+Jump Shot,Jump Shot,202,20000047,33.7723,-27,272,-118.2968,0,2,0,2000-01,4,27,1,3PT Field Goal,Center(C),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,40
+Jump Shot,Jump Shot,212,20000047,33.9783,-176,66,-118.4458,11,3,0,2000-01,12,18,0,2PT Field Goal,Left Side(L),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,41
+Layup Shot,Layup,219,20000047,34.0403,7,4,-118.2628,10,3,0,2000-01,13,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,42
+Jump Shot,Jump Shot,229,20000047,33.9113,150,133,-118.1198,8,3,0,2000-01,59,20,1,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,43
+Jump Shot,Jump Shot,233,20000047,34.0293,49,15,-118.2208,8,3,0,2000-01,29,5,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,44
+Layup Shot,Layup,281,20000047,34.0253,-12,19,-118.2818,4,3,0,2000-01,29,2,,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,45
+Layup Shot,Layup,289,20000047,34.0403,-4,4,-118.2738,3,3,0,2000-01,21,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,46
+Reverse Dunk Shot,Dunk,295,20000047,34.0403,-4,4,-118.2738,2,3,0,2000-01,55,0,0,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,47
+Slam Dunk Shot,Dunk,300,20000047,34.0353,1,9,-118.2688,2,3,0,2000-01,38,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,48
+Jump Shot,Jump Shot,398,20000047,33.9243,121,120,-118.1488,4,4,0,2000-01,55,17,1,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,49
+Jump Shot,Jump Shot,410,20000047,34.0143,-176,30,-118.4458,3,4,0,2000-01,19,17,,2PT Field Goal,Left Side(L),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,50
+Layup Shot,Layup,445,20000047,34.0353,1,9,-118.2688,1,4,0,2000-01,8,0,0,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,51
+Layup Shot,Layup,446,20000047,34.0353,-12,9,-118.2818,1,4,0,2000-01,6,1,0,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-04,LAL @ VAN,VAN,52
+Jump Shot,Jump Shot,7,20000049,33.9743,24,70,-118.2458,10,1,0,2000-01,33,7,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,53
+Jump Shot,Jump Shot,11,20000049,34.0483,-189,-4,-118.4588,10,1,0,2000-01,4,18,0,2PT Field Goal,Left Side(L),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,54
+Jump Shot,Jump Shot,60,20000049,33.7973,-141,247,-118.4108,4,1,0,2000-01,58,28,,3PT Field Goal,Left Side Center(LC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,55
+Jump Shot,Jump Shot,80,20000049,33.8503,-155,194,-118.4248,2,1,0,2000-01,33,24,0,3PT Field Goal,Left Side Center(LC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,56
+Jump Shot,Jump Shot,105,20000049,33.8163,1,228,-118.2688,11,2,0,2000-01,26,22,1,3PT Field Goal,Center(C),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,57
+Driving Layup Shot,Layup,132,20000049,34.0443,0,0,-118.2698,8,2,0,2000-01,40,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,58
+Slam Dunk Shot,Dunk,190,20000049,34.0443,0,0,-118.2698,4,2,0,2000-01,5,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,59
+Jump Shot,Jump Shot,199,20000049,33.8033,146,241,-118.1238,3,2,0,2000-01,10,28,,3PT Field Goal,Right Side Center(RC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,60
+Jump Shot,Jump Shot,214,20000049,33.9363,-33,108,-118.3028,2,2,0,2000-01,2,11,0,2PT Field Goal,Center(C),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,61
+Layup Shot,Layup,232,20000049,33.9953,22,49,-118.2478,0,2,0,2000-01,47,5,1,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,62
+Driving Layup Shot,Layup,260,20000049,34.0443,0,0,-118.2698,9,3,0,2000-01,32,0,0,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,63
+Driving Layup Shot,Layup,353,20000049,34.0233,56,21,-118.2138,0,3,0,2000-01,37,5,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,64
+Running Jump Shot,Jump Shot,369,20000049,34.0183,121,26,-118.1488,0,3,0,2000-01,1,12,1,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,65
+Jump Shot,Jump Shot,397,20000049,33.9533,-10,91,-118.2798,10,4,0,2000-01,13,9,,2PT Field Goal,Center(C),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-05,LAL vs. LAC,LAC,66
+Jump Shot,Jump Shot,22,20000058,34.0083,-119,36,-118.3888,9,1,0,2000-01,6,12,,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,67
+Jump Shot,Jump Shot,28,20000058,33.9873,231,57,-118.0388,8,1,0,2000-01,17,23,0,3PT Field Goal,Right Side(R),Right Corner 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,68
+Driving Layup Shot,Layup,33,20000058,34.0443,0,0,-118.2698,7,1,0,2000-01,53,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,69
+Driving Dunk Shot,Dunk,41,20000058,34.0443,0,0,-118.2698,7,1,0,2000-01,1,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,70
+Jump Shot,Jump Shot,55,20000058,33.9343,159,110,-118.1108,5,1,0,2000-01,15,19,,2PT Field Goal,Right Side(R),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,71
+Jump Shot,Jump Shot,73,20000058,33.7873,7,257,-118.2628,3,1,0,2000-01,11,25,1,3PT Field Goal,Center(C),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,72
+Driving Layup Shot,Layup,131,20000058,34.0443,0,0,-118.2698,7,2,0,2000-01,56,0,1,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,73
+Jump Shot,Jump Shot,186,20000058,33.9873,51,57,-118.2188,2,2,0,2000-01,40,7,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,74
+Jump Shot,Jump Shot,201,20000058,33.8543,167,190,-118.1028,0,2,0,2000-01,10,25,0,3PT Field Goal,Right Side Center(RC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,75
+Jump Shot,Jump Shot,215,20000058,33.8543,-119,190,-118.3888,11,3,0,2000-01,2,22,1,2PT Field Goal,Left Side Center(LC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,76
+Jump Shot,Jump Shot,225,20000058,33.9873,16,57,-118.2538,9,3,0,2000-01,10,5,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,77
+Jump Shot,Jump Shot,236,20000058,33.9343,-84,110,-118.3538,7,3,0,2000-01,24,13,0,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,78
+Jump Shot,Jump Shot,306,20000058,34.0023,-71,42,-118.3408,0,3,0,2000-01,1,8,0,2PT Field Goal,Left Side(L),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,79
+Jump Shot,Jump Shot,313,20000058,33.9973,58,47,-118.2118,11,4,0,2000-01,49,7,,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,80
+Jump Shot,Jump Shot,368,20000058,33.9113,30,133,-118.2398,5,4,0,2000-01,1,13,1,2PT Field Goal,Center(C),In The Paint (Non-RA),8-16 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,81
+Jump Shot,Jump Shot,425,20000058,33.8883,1,156,-118.2688,0,4,0,2000-01,46,15,0,2PT Field Goal,Center(C),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-07,LAL @ HOU,HOU,82
+Jump Shot,Jump Shot,2,20000068,33.8333,132,211,-118.1378,11,1,0,2000-01,41,24,0,3PT Field Goal,Right Side Center(RC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,83
+Slam Dunk Shot,Dunk,11,20000068,34.0403,-8,4,-118.2778,10,1,0,2000-01,59,0,0,2PT Field Goal,Center(C),Restricted Area,Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,84
+Jump Shot,Jump Shot,20,20000068,33.9743,-29,70,-118.2988,9,1,0,2000-01,48,7,,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,85
+Turnaround Jump Shot,Jump Shot,33,20000068,33.9953,-124,49,-118.3938,7,1,0,2000-01,26,13,,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,86
+Jump Shot,Jump Shot,39,20000068,33.9173,132,127,-118.1378,6,1,0,2000-01,36,18,1,2PT Field Goal,Right Side Center(RC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,87
+Jump Shot,Jump Shot,44,20000068,33.8563,-29,188,-118.2988,5,1,0,2000-01,54,19,1,2PT Field Goal,Center(C),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,88
+Jump Shot,Jump Shot,70,20000068,33.9683,140,76,-118.1298,2,1,0,2000-01,24,15,1,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,89
+Turnaround Jump Shot,Jump Shot,74,20000068,34.0443,140,0,-118.1298,1,1,0,2000-01,48,14,1,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,90
+Jump Shot,Jump Shot,79,20000068,33.8883,-1,156,-118.2708,1,1,0,2000-01,25,15,1,2PT Field Goal,Center(C),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,91
+Jump Shot,Jump Shot,82,20000068,34.0403,-151,4,-118.4208,0,1,0,2000-01,47,15,1,2PT Field Goal,Left Side(L),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,92
+Jump Shot,Jump Shot,101,20000068,33.9683,110,76,-118.1598,10,2,0,2000-01,57,13,0,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,93
+Jump Shot,Jump Shot,115,20000068,33.9573,132,87,-118.1378,9,2,0,2000-01,37,15,0,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,94
+Turnaround Jump Shot,Jump Shot,180,20000068,34.0403,132,4,-118.1378,4,2,0,2000-01,25,13,,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,95
+Jump Shot,Jump Shot,184,20000068,33.7933,-58,251,-118.3278,3,2,0,2000-01,50,25,1,3PT Field Goal,Center(C),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,96
+Jump Shot,Jump Shot,192,20000068,33.8843,-94,160,-118.3638,3,2,0,2000-01,15,18,1,2PT Field Goal,Left Side Center(LC),Mid-Range,16-24 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,97
+Jump Shot,Jump Shot,215,20000068,33.8943,-193,150,-118.4628,0,2,0,2000-01,53,24,0,3PT Field Goal,Left Side Center(LC),Above the Break 3,24+ ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,98
+Jump Shot,Jump Shot,217,20000068,34.0443,140,0,-118.1298,0,2,0,2000-01,48,14,1,2PT Field Goal,Right Side(R),Mid-Range,8-16 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,99
+Jump Shot,Jump Shot,228,20000068,34.0353,39,9,-118.2308,11,3,0,2000-01,26,4,0,2PT Field Goal,Center(C),In The Paint (Non-RA),Less Than 8 ft.,1610612747,Los Angeles Lakers,2000-11-08,LAL @ SAS,SAS,100

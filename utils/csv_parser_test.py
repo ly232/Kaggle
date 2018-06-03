@@ -1,4 +1,3 @@
-import datetime
 import numpy as np
 import unittest
 
@@ -16,27 +15,27 @@ class TestSchemaInferencer(unittest.TestCase):
 
     self.assertEqual(
       [
-       [1.0, 'y', '', datetime.datetime(2000, 1, 1, 0, 0), '1234-56-79', 2.3],
-       [2.0, 'y', 1.0, datetime.datetime(2001, 2, 2, 0, 0), '1234-56-79', 2.3],
-       [2.0, 'z', 0.0, datetime.datetime(2001, 2, 2, 0, 0), '1234-56-79', 2.3]
+       [1.0, 'y', '', 946713600.0, '1234-56-79', 2.3],
+       [2.0, 'y', 1.0, 981100800.0, '1234-56-79', 2.3],
+       [2.0, 'z', 0.0, 981100800.0, '1234-56-79', 2.3]
       ],
       self._csv_parser._raw_data)
 
     self.assertEqual(
       [
-       [2.0, 'y', datetime.datetime(2001, 2, 2, 0, 0), '1234-56-79', 2.3],
-       [2.0, 'z', datetime.datetime(2001, 2, 2, 0, 0), '1234-56-79', 2.3]
+       [2.0, 'y', 981100800.0, '1234-56-79', 2.3],
+       [2.0, 'z', 981100800.0, '1234-56-79', 2.3]
       ],
       self._csv_parser._raw_train_data)
 
     self.assertEqual(
       [
-       [1.0, 'y', datetime.datetime(2000, 1, 1, 0, 0), '1234-56-79', 2.3],
+       [1.0, 'y', 946713600.0, '1234-56-79', 2.3],
       ],
       self._csv_parser._raw_test_data)
 
     self.assertEqual(
-      [[1.0], [0.0]],
+      [1.0, 0.0],
       self._csv_parser._raw_target_data)
 
   def testGetShuffledHeader(self):
@@ -49,17 +48,17 @@ class TestSchemaInferencer(unittest.TestCase):
 
     np.testing.assert_array_equal(
       np.array([
-        [2.0, datetime.datetime(2001, 2, 2, 0, 0), 2.3, 1.0, 0.0, 1.0],
-        [2.0, datetime.datetime(2001, 2, 2, 0, 0), 2.3, 0.0, 1.0, 1.0]]),
+        [2.0, 9.811008e+08, 2.3, 1.0, 0.0, 1.0],
+        [2.0, 9.811008e+08, 2.3, 0.0, 1.0, 1.0]]),
       data['X'])
 
     np.testing.assert_array_equal(
       np.array([
-        [1.0, datetime.datetime(2000, 1, 1, 0, 0), 2.3, 1.0, 0.0, 1.0]]),
+        [1.0, 9.467136e+08, 2.3, 1.0, 0.0, 1.0]]),
       data['X_test'])
 
     np.testing.assert_array_equal(
-      np.array([[ 1.], [ 0.]]),
+      np.array([1., 0.]),
       data['y'])
 
     self.assertEqual(
