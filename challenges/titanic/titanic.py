@@ -10,8 +10,7 @@ import numpy as np
 import pandas as pd
 
 import utils.pandas_utils as pd_utils
-
-from algorithms.classifications import Classifiers
+import algorithms.classifications as clfs
 
 
 def CleanupData(samples):
@@ -49,13 +48,6 @@ def main():
   samples = CleanupData(samples)
 
   #
-  # Training.
-  #
-  classifiers = Classifiers()
-  classifiers.Run(samples, targets)
-  print classifiers.GetReport()
-
-  #
   # Generate predictions.
   #
   samples_test = pd.read_csv('test.csv')
@@ -74,7 +66,16 @@ def main():
 
   # Make predictions and write result to file.
   assert set(samples.columns) == set(samples_test.columns)
-  predictions = classifiers.Predict('GradientBoostingClassifier', samples_test)
+
+  # classifiers = clfs.Classifiers()
+  # classifiers.Run(samples, targets)
+  # print classifiers.GetReport()
+  # predictions = classifiers.Predict('GradientBoostingClassifier', samples_test)
+
+  voting_classifier = clfs.GetVotingClassifier()
+  voting_classifier.fit(samples, targets)
+  predictions = voting_classifier.predict(samples_test)
+
   print predictions
   passenger_ids = samples_test['PassengerId']
   output = np.transpose(np.vstack((passenger_ids, predictions)))

@@ -34,11 +34,19 @@ _CLASSIFIER_CONFIGS = {
   'AdaBoostClassifier': (ensemble, {}),
   'RandomForestClassifier': (ensemble, {'n_estimators': 50}),
   'GradientBoostingClassifier': (ensemble, {}),
-  # 'MLPClassifier': (neural_network, {}),
-  # 'GaussianProcessClassifier': (gaussian_process, {}),
-  # 'GaussianNB': (naive_bayes, {}),
-  # 'QuadraticDiscriminantAnalysis': (discriminant_analysis, {}),
+  'MLPClassifier': (neural_network, {}),
+  'GaussianProcessClassifier': (gaussian_process, {}),
+  'GaussianNB': (naive_bayes, {}),
 }
+
+
+def GetVotingClassifier():
+  models = [
+    (model, getattr(
+      _CLASSIFIER_CONFIGS[model][0], model)(**_CLASSIFIER_CONFIGS[model][1]))
+    for model in _CLASSIFIER_CONFIGS
+  ]
+  return ensemble.VotingClassifier(estimators=models)
 
 
 """Thread to execute ML classification algorithm.
@@ -109,3 +117,4 @@ class Classifiers(object):
       report += score['report']
       report += '\n\n'
     return report
+
