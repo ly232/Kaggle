@@ -16,6 +16,7 @@ from sklearn import gaussian_process
 from sklearn import naive_bayes
 from sklearn import discriminant_analysis 
 
+from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
@@ -32,7 +33,7 @@ _CLASSIFIER_CONFIGS = {
   'DecisionTreeClassifier': (tree, {}),
   'AdaBoostClassifier': (ensemble, {}),
   'RandomForestClassifier': (ensemble, {'n_estimators': 50}),
-  # 'GradientBoostingClassifier': (ensemble, {}),
+  'GradientBoostingClassifier': (ensemble, {}),
   # 'MLPClassifier': (neural_network, {}),
   # 'GaussianProcessClassifier': (gaussian_process, {}),
   # 'GaussianNB': (naive_bayes, {}),
@@ -55,6 +56,8 @@ class RunnerThread(threading.Thread):
     clf = self._model.fit(X_train, y_train)
     self._score['training'] = clf.score(X_train, y_train)
     self._score['testing'] = clf.score(X_test, y_test)
+    predicted = clf.predict(X_test)
+    self._score['report'] = classification_report(y_test, predicted)
 
 
 """Class that holds various classifiers.
@@ -73,7 +76,8 @@ class Classifiers(object):
     self._scores = {
       model: {
         'training': 0,
-        'testing': 0
+        'testing': 0,
+        'report': 'N.A.',
       }
       for model in _CLASSIFIER_CONFIGS
     }
@@ -101,5 +105,7 @@ class Classifiers(object):
       score = self._scores[model]
       report += model + '\n'
       report += '  Training set score: {:.3f}\n'.format(score['training'])
-      report += '  Testing set score: {:.3f}\n\n'.format(score['testing'])
+      report += '  Testing set score: {:.3f}\n'.format(score['testing'])
+      report += score['report']
+      report += '\n\n'
     return report

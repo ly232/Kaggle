@@ -31,6 +31,6 @@ def main():
     header='shot_id,shot_made_flag',
     comments='')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   main()
  
