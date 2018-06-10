@@ -1,4 +1,4 @@
-"""CSV parser to parse CSV data into numpy arrays for subsequent ML pipeline.
+r"""CSV parser to parse CSV data into numpy arrays for subsequent ML pipeline.
 
 It provides the following features:
   - Extracts out categorical data and apply with one-hot-encoding.

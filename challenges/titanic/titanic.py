@@ -25,7 +25,12 @@ def CleanupData(samples):
   """
   # Exclude columns that are either irrelevant to predictions, or are missing
   # in the test dataset.
-  samples = pd_utils.DropColumns(samples, ['Name', 'Ticket', 'Fare'])
+  #
+  # NOTE: 'Cabin' is an interesting one. It's a non-numerical column so it 
+  # requires one hot encoding. However, the cardinality is quite large, e.g.
+  # O(100). With one hot encoding it will drastically increase the 
+  # dimensionality of the search space.
+  samples = pd_utils.DropColumns(samples, ['Name', 'Ticket', 'Fare', 'Cabin'])
 
   # Apply one-hot-encoding to all non-numeric columns.
   samples = pd_utils.OneHotEncode(samples)
@@ -67,16 +72,17 @@ def main():
   # Make predictions and write result to file.
   assert set(samples.columns) == set(samples_test.columns)
 
-  # classifiers = clfs.Classifiers()
-  # classifiers.Run(samples, targets)
-  # print classifiers.GetReport()
-  # predictions = classifiers.Predict('GradientBoostingClassifier', samples_test)
+  classifiers = clfs.Classifiers()
+  classifiers.Run(samples, targets)
+  print classifiers.GetReport()
+  predictions = classifiers.Predict('GradientBoostingClassifier', samples_test)
 
-  voting_classifier = clfs.GetVotingClassifier()
-  voting_classifier.fit(samples, targets)
-  predictions = voting_classifier.predict(samples_test)
+  # voting_classifier = clfs.GetVotingClassifier()
+  # voting_classifier.fit(samples, targets)
+  # predictions = voting_classifier.predict(samples_test)
+  
+  print "Predictions:\n{}".format(predictions)
 
-  print predictions
   passenger_ids = samples_test['PassengerId']
   output = np.transpose(np.vstack((passenger_ids, predictions)))
   np.savetxt(

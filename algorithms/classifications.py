@@ -1,4 +1,4 @@
-"""Convinient wrapper for various off-the-shelf popular ML classifiers.
+r"""Convinient wrapper for various off-the-shelf popular ML classifiers.
 
 This file is effectively a configuration file, specifying (a) the classifiers
 to be considered, and (b) the hyper-parameters for each classifier. It makes no
@@ -117,4 +117,3 @@ class Classifiers(object):
       report += score['report']
       report += '\n\n'
     return report
-
