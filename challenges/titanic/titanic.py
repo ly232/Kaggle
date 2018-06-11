@@ -5,12 +5,12 @@ from os.path import expanduser
 sys.path.insert(0, expanduser(".") + '/../..')
 ##
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import utils.pandas_utils as pd_utils
 import algorithms.classifications as clfs
+import visulization.histogram as histogram
+import utils.pandas_utils as pd_utils
 
 
 def CleanupData(samples):
@@ -30,7 +30,7 @@ def CleanupData(samples):
   # requires one hot encoding. However, the cardinality is quite large, e.g.
   # O(100). With one hot encoding it will drastically increase the 
   # dimensionality of the search space.
-  samples = pd_utils.DropColumns(samples, ['Name', 'Ticket', 'Fare', 'Cabin'])
+  samples = pd_utils.DropColumns(samples, ['Name', 'Ticket', 'Cabin'])
 
   # Apply one-hot-encoding to all non-numeric columns.
   samples = pd_utils.OneHotEncode(samples)
@@ -51,6 +51,12 @@ def main():
   samples = training_data[list(set(schema) - set(['Survived']))]
   targets = training_data['Survived']
   samples = CleanupData(samples)
+
+  # Explore data samples.
+  histogram.MakeHistograms(
+    pd.merge(samples, targets.to_frame(name='Survived'),
+      left_index=True, right_index=True),
+    'Survived', 5)
 
   #
   # Generate predictions.
@@ -80,7 +86,7 @@ def main():
   # voting_classifier = clfs.GetVotingClassifier()
   # voting_classifier.fit(samples, targets)
   # predictions = voting_classifier.predict(samples_test)
-  
+
   print "Predictions:\n{}".format(predictions)
 
   passenger_ids = samples_test['PassengerId']
