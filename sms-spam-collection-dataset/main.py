@@ -2,10 +2,10 @@ import kagglehub
 from kagglehub import KaggleDatasetAdapter
 
 import kagglehub
-import util
+import naive_bayes
 
 # Load the latest version
-df = kagglehub.load_dataset(
+raw_df = kagglehub.load_dataset(
     KaggleDatasetAdapter.PANDAS,
     handle="uciml/sms-spam-collection-dataset",
     path="spam.csv",
@@ -15,6 +15,20 @@ df = kagglehub.load_dataset(
     # documenation for more information:
     # https://github.com/Kaggle/kagglehub/blob/main/README.md#kaggledatasetadapterpandas
 )
-df = util.clean_sms_spam_collection_dataset(df)
 
-print("== First 5 records ==\n", df.head())
+print("== First 5 records ==\n", raw_df.head())
+
+# Naive Bayes Classifier
+naive_bayes_classifier = naive_bayes.NaiveBayesClassifier(raw_df)
+
+print("== First 5 records from NB ==\n", naive_bayes_classifier.df.head())
+
+sample_token = naive_bayes_classifier.df["tokens"].iloc[0]
+
+print(
+    'value counts for "label" column:\n',
+    naive_bayes_classifier.df["label"].value_counts(),
+)
+
+print("== STARTING EVALUATION for Naive Bayes Classifier ==")
+naive_bayes_classifier.eval()
