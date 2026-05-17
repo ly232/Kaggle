@@ -32,12 +32,12 @@ class NaiveBayesClassifier:
         )
 
         # Compute label probabilities for the Naive Bayes classifier.
-        self.p_spam = self.y_train.value_counts()["spam"] / len(self.df)
+        self.p_spam = self.y_train.value_counts().get("spam", 0) / len(self.y_train)
 
         # Compute token probabilities conditioned on labels.
         self.num_spams, self.num_hams = (
-            self.y_train.value_counts()["spam"],
-            self.y_train.value_counts()["ham"],
+            self.y_train.value_counts().get("spam", 0),
+            self.y_train.value_counts().get("ham", 0),
         )
         self.token_counts_given_spam = self._count_conditional_tokens(
             self.X_train, self.y_train, label_value="spam"
@@ -73,15 +73,20 @@ class NaiveBayesClassifier:
         self, tokens: list[int], label_value: str
     ) -> float:
         assert label_value in ("spam", "ham")
-        token_counts = (
+        token_counts_given_label = (
             self.token_counts_given_spam
             if label_value == "spam"
             else self.token_counts_given_ham
         )
-        label_count = self.num_spams if label_value == "spam" else self.num_hams
         p_label = self.p_spam if label_value == "spam" else 1 - self.p_spam
-        token_counts_given_label = token_counts[token_counts.index.isin(tokens)]
-        label_probabilities = token_counts_given_label / label_count
+        token_counts_given_message = (
+            # reindex only retains indexes that match the tokens in message.
+            # fillna(0) assigns 0 probability for unmatched tokens.
+            token_counts_given_label.reindex(tokens).fillna(0)
+        )
+        label_probabilities = (
+            token_counts_given_message / token_counts_given_label.sum()
+        )
         sum_log_prob = label_probabilities.apply(lambda p: np.log(p)).sum() + np.log(
             p_label
         )
