@@ -1,9 +1,8 @@
-# Install dependencies as needed:
-# pip install kagglehub[pandas-datasets]
 import kagglehub
 from kagglehub import KaggleDatasetAdapter
 
 import kagglehub
+import util
 
 # Load the latest version
 df = kagglehub.load_dataset(
@@ -16,5 +15,6 @@ df = kagglehub.load_dataset(
     # documenation for more information:
     # https://github.com/Kaggle/kagglehub/blob/main/README.md#kaggledatasetadapterpandas
 )
+df = util.clean_sms_spam_collection_dataset(df)
 
-print("First 5 records:", df.head())
+print("== First 5 records ==\n", df.head())
