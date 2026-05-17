@@ -85,7 +85,9 @@ class NaiveBayesClassifier:
             token_counts_given_label.reindex(tokens).fillna(0)
         )
         label_probabilities = (
-            token_counts_given_message / token_counts_given_label.sum()
+            # +1 to num and +vocab_size to denom for Laplace smoothing.
+            (token_counts_given_message + 1)
+            / (token_counts_given_label.sum() + len(self.tokenizer))
         )
         sum_log_prob = label_probabilities.apply(lambda p: np.log(p)).sum() + np.log(
             p_label
