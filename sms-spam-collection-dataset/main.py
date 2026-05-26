@@ -1,7 +1,6 @@
 import kagglehub
 from kagglehub import KaggleDatasetAdapter
 
-import kagglehub
 import naive_bayes
 
 # Load the latest version
