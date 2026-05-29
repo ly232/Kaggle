@@ -1,5 +1,7 @@
 """Hyperparameter tuning with Optuna."""
 
+from sklearn.metrics import f1_score
+
 import optuna
 import torch
 import torch.nn as nn
@@ -47,8 +49,9 @@ class Trainer:
         with torch.no_grad():
             preds = (self.model(X_val) >= 0.5).float()
             accuracy = (preds == y_val).float().mean().item()
+            f1 = f1_score(y_val.squeeze().numpy(), preds.squeeze().numpy())
 
-        return accuracy, losses
+        return f1, accuracy, losses
 
 
 class HyperparameterTuner:
@@ -66,7 +69,7 @@ class HyperparameterTuner:
         lr = trial.suggest_float("lr", 1e-5, 1e-1, log=True)
         model = SurvivalModel(self.X_tr.shape[1], hidden_dim)
         trainer = Trainer(model, lr)
-        accuracy, _ = trainer.train(self.X_tr, self.y_tr, self.X_val, self.y_val)
+        f1, accuracy, _ = trainer.train(self.X_tr, self.y_tr, self.X_val, self.y_val)
         return accuracy
 
     def tune(self):

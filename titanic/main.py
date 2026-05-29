@@ -76,12 +76,13 @@ tuner.tune()
 
 model = SurvivalModel(X_train.shape[1], tuner.best_params["hidden_dim"])
 trainer = Trainer(model, tuner.best_params["lr"])
-accuracy, losses = trainer.train(X_tr, y_tr, X_val, y_val)
-print(f"Validation Accuracy: {accuracy:.4f}")
+f1, accuracy, losses = trainer.train(X_tr, y_tr, X_val, y_val)
+print(f"Validation F1 score: {f1:.4f}, accuracy: {accuracy:.4f}")
 torch.save(
     {
         "model_state_dict": model.state_dict(),
         "best_params": tuner.best_params,
+        "f1": f1,
         "accuracy": accuracy,
         "losses": losses,
     },
