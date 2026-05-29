@@ -4,16 +4,17 @@ import pandas as pd
 import os
 import duckdb
 import torch
-import tqdm
 
 from data_processing import to_tensors
-from model import SurvivalClassifier
+from sklearn.model_selection import train_test_split
+from training import HyperparameterTuner, SurvivalModel, Trainer
 
 NUM_EPOCHS = 1000
 
 path = kagglehub.competition_download("titanic")
 train_df = pd.read_csv(os.path.join(path, "train.csv"))
 test_df = pd.read_csv(os.path.join(path, "test.csv"))
+
 
 #
 # Data explorations.
@@ -62,24 +63,30 @@ print(cabin_counts)
 
 X_train, y_train = to_tensors(train_df)
 
-model = SurvivalClassifier(input_dim=X_train.shape[1])
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-loss_fn = torch.nn.BCELoss()
+X_tr, X_val, y_tr, y_val = train_test_split(
+    X_train,
+    y_train,
+    test_size=0.2,
+    random_state=42,
+    stratify=y_train,  # labels are imbalanced.
+)
 
-# training loop
-losses: list[float] = []  # for plotting.
-for _ in tqdm.tqdm(range(NUM_EPOCHS)):
-    # Note this is crucial to avoid optimizer from updating
-    # weights with accumulated gradients. We almost always want
-    # to do this.
-    optimizer.zero_grad()
+tuner = HyperparameterTuner(X_tr, y_tr, X_val, y_val)
+tuner.tune()
 
-    outputs = model(X_train)
-    loss = loss_fn(outputs, y_train)
-    loss.backward()
-    optimizer.step()
-
-    losses.append(loss.item())
+model = SurvivalModel(X_train.shape[1], tuner.best_params["hidden_dim"])
+trainer = Trainer(model, tuner.best_params["lr"])
+accuracy, losses = trainer.train(X_tr, y_tr, X_val, y_val)
+print(f"Validation Accuracy: {accuracy:.4f}")
+torch.save(
+    {
+        "model_state_dict": model.state_dict(),
+        "best_params": tuner.best_params,
+        "accuracy": accuracy,
+        "losses": losses,
+    },
+    "best_model.pt",
+)
 
 # plot the training loss curve.
 import matplotlib.pyplot as plt
@@ -90,6 +97,7 @@ plt.ylabel("Loss")
 plt.title("Training Loss Curve")
 plt.savefig("training_loss_curve.png")
 plt.close()
+
 
 # Now run inference against test set.
 print("sample test df:")

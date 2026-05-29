@@ -49,6 +49,7 @@ def to_tensors(
             "Embarked",
         ],
         drop_first=True,  # Drop the first category to avoid multicollinearity.
+        dtype=float,  # Ensure the one-hot encoded columns are of type float.
     )
     print(featurized_df.columns)
 
@@ -57,7 +58,7 @@ def to_tensors(
     featurized_df["Fare"] = featurized_df["Fare"].fillna(featurized_df["Fare"].median())
 
     # Transform df into  input and output tensors.
-    X = featurized_df
+    X = featurized_df.astype("float32")
     if "Parch_9" not in X.columns:
         assert (
             is_train
